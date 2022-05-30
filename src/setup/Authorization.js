@@ -261,9 +261,9 @@ const signInForm =   <form className="flex flex-col pl-2 sm:items-center sm:just
             <div className="w-3/4 flex flex-col item-center">
                 <h1 className="text-xl pt-12 text-gray-700 text-center">{register? "Login": "Register"}</h1>
                 {register? signInForm : registerForm}
-                <button className="p-2 text-xs text-left mt-6 text-blue-900 sm:text-center"  onClick={()=>{setRegister(prev => !prev)}}>{register? "don't have an account yet": "want to login?"}</button>
-                {errorMessage ? <p className="text-sm text-red-400 sm:text-center text-left">{errorMessage}</p> : null}
-                {Loading ?  Loader : null}
+                <button className="p-2 text-xs text-left mt-6 text-blue-900 sm:text-center"  onClick={()=>{setRegister(prev => !prev)}}>{register? "don't have an account yet?": "want to login?"}</button>
+                {errorMessage ? <p className="text-xs text-red-400 sm:text-center text-left p-1">{errorMessage}</p> : null}
+                {Loading ?  <div className="flex justify-center align-center">{Loader}</div> : null}
             </div>
 
             <div className="w-3/4 h-screen bg-blue-100 overflow-x-hidden sm:w-full max-w-screen bg-cover" style={{
