@@ -7,6 +7,9 @@ import MainPage from "../MainApp/MainPage";
 import {Route, Link, Routes, Redirect, useLocation, Navigate, useNavigate} from "react-router-dom"
 import NotFound from "./NotFound";
 
+const remoteBackend = "https://store-crud.herokuapp.com/"
+const localBackend = "http://localhost:1000/"
+
 
 
 
@@ -94,7 +97,7 @@ export default function Authorization(){
 
     const createUser = async ()=>{
         setLoading(true)
-         const data =  await axios.post("http://localhost:1000/users", {name: registerFormData.name, email: registerFormData.email, password: registerFormData.setPassword}).catch(err =>{
+         const data =  await axios.post(`${remoteBackend}users`, {name: registerFormData.name, email: registerFormData.email, password: registerFormData.setPassword}).catch(err =>{
             /* Receives axios error or response and decides error message */
             console.log(err)
             console.log(JSON.stringify(err.body))
@@ -130,7 +133,7 @@ export default function Authorization(){
     const signIn = async ()=>{
         /* Sends request to backend and saves the data, the user as state */
         setLoading(true)
-       const res = await axios.post("http://localhost:1000/users/login", {password: signInFormData.password, email: signInFormData.email}).catch(err =>{
+       const res = await axios.post(`${remoteBackend}users/login`, {password: signInFormData.password, email: signInFormData.email}).catch(err =>{
            setLoading(false)
            const refinedErr = JSON.stringify(err)
            const finalErr = JSON.parse(refinedErr)

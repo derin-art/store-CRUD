@@ -7,8 +7,12 @@ export default function CrudComponent(){
     const [itemData, setItemData] = React.useState()
     const [resStatus, setResStatus] = React.useState()
     const [ItemArray, setItemArray] = React.useState()
+
+    const remoteBackend = "https://store-crud.herokuapp.com/"
+    const localBackend = "http://localhost:1000/"
+
     const getData = async()=>{
-        const response = await axios.get("http://localhost:1000/storeV1").catch(err =>{
+        const response = await axios.get(`${remoteBackend}storeV1`).catch(err =>{
             console.log(err)
         }) 
 
