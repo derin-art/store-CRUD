@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-
+import waveFooter from "./wave.svg"
 export default function AddItems({setCurrentItem, currentItem, setPreviewMode, user}){
     const [itemInput, setItemInput] = React.useState({})
     const [errorMessage, setErrorMessage] = React.useState()
@@ -176,6 +176,6 @@ export default function AddItems({setCurrentItem, currentItem, setPreviewMode, u
                 </div>
               {errorMessage &&   <p className="text-red-500 text-xs font-bold">{errorMessage}</p>}
               {goodPost && <p className="flex uppercase text-xs font-bold justify-center items-center mt-2 text-gray-700">Saved succesful<p className="ml-1">{saveIcon}</p></p>}
-                
+              
             </div>
 }

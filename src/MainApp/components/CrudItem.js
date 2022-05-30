@@ -88,6 +88,8 @@ export default function CrudItem({name, price, img, description, id, setItemData
     
 
     }
+
+    
     
     const loaderIcon = <svg role="status" class="mr-2 w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-green-400" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -102,17 +104,17 @@ export default function CrudItem({name, price, img, description, id, setItemData
         <div className="">
            <input id="img" name="img" type="file" onChange={(e)=>{updateImage(e)}} className="hidden"></input>
            <label htmlFor="img" className="h-10">
-                 <img src={item.newDisplayimg ? item.newDisplayimg :`data:image/jpeg;base64,${img}`} className="h-10 w-8 rounded-l-lg border-green-400 border border-r-gray-300"></img>{/* data:image/jpeg;base64, */}
+                 <img src={item.newDisplayimg ? item.newDisplayimg :`data:image/jpeg;base64,${img}`} className="h-10 sm:h-15 sm:w-8 w-8 rounded-l-lg border-green-400 border border-r-gray-300"></img>{/* data:image/jpeg;base64, */}
            </label>
         </div>
 
-        <input type="text" defaultValue={name} /* value={item.name} */ onChange={(e)=>{updateName(e)}} className="text-gray-700 p-1 focus:bg-gray-200 bg-gray-100 outline-none text-center focus:outline border-y w-12 text-xs border-green-400 overflow-hidden h-10">
+        <input type="text" defaultValue={name} /* value={item.name} */ onChange={(e)=>{updateName(e)}} className="text-gray-700 p-1 focus:bg-gray-200 bg-gray-100 outline-none text-center focus:outline border-y w-12 sm:w-24 text-xs border-green-400 overflow-hidden h-10">
         </input>
 
-        <input type="number" defaultValue={price}/*  value={item.price} */ onChange={(e)=>{updatePrice(e)}} className="text-gray-700 focus:bg-gray-200 bg-gray-100 text-center outline-none focus:outline border border-r-gray-300 border-l-gray-300 border-green-400 text-xs w-12 overflow-hidden h-10">
+        <input type="number" defaultValue={price}/*  value={item.price} */ onChange={(e)=>{updatePrice(e)}} className="text-gray-700 focus:bg-gray-200 bg-gray-100 text-center outline-none focus:outline border sm:w-24 border-r-gray-300 border-l-gray-300 border-green-400 text-xs w-12 overflow-hidden h-10">
         </input>
 
-        <textarea defaultValue={description} /* value={item.description} */ onChange={(e)=>{updateDescription(e)}} className="text-gray-700 p-1 focus:bg-gray-200 outline-none bg-gray-100 focus:outline border-y border-r text-center border-green-400 w-16 overflow-hidden text-xs h-10 rounded-r-lg">
+        <textarea defaultValue={description} /* value={item.description} */ onChange={(e)=>{updateDescription(e)}} className="text-gray-700 p-1 focus:bg-gray-200 outline-none bg-gray-100 focus:outline border-y sm:w-24 border-r text-center border-green-400 w-16 overflow-hidden text-xs h-10 rounded-r-lg">
 
         </textarea>
         <div className="flex ml-2">
