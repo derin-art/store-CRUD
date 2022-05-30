@@ -2,6 +2,9 @@ import React from "react";
 import axios from "axios";
 
 export default function CrudItem({name, price, img, description, id, setItemData}){
+
+    const remoteBackend = "https://store-crud.herokuapp.com/"
+    const localBackend = "http://localhost:1000/"
   
     const [patchSent, setPatchSent] = React.useState(false)
     const [deleteSent, setDeleteSent] = React.useState(false)
@@ -41,7 +44,8 @@ export default function CrudItem({name, price, img, description, id, setItemData
     }
 
 
-    const updateSingle = async ()=>{
+    const updateSingle = async (e)=>{
+        e.preventDefault()
         setPatchSent(true)
         const itemUpdate = new FormData()
 
@@ -56,7 +60,7 @@ export default function CrudItem({name, price, img, description, id, setItemData
             headers: { 'content-type': 'multipart/form-data'}
         }
 
-        const patchedItem = await axios.patch(`http://localhost:1000/storeV1/${id}`, itemUpdate, config ).catch(err => {
+        const patchedItem = await axios.patch(`${remoteBackend}storeV1/${id}`, itemUpdate, config ).catch(err => {
             console.log(err)
             return
         })
@@ -70,13 +74,14 @@ export default function CrudItem({name, price, img, description, id, setItemData
      
     }
 
-    const deleteRequest = async ()=>{
+    const deleteRequest = async (e)=>{
+        e.preventDefault()
         setDeleteSent(true)
         const config = {
             headers: { 'content-type': 'multipart/form-data'}
         }
 
-        const item = await axios.delete(`http://localhost:1000/storeV1/${id}`).catch(err => {
+        const item = await axios.delete(`${remoteBackend}storeV1/${id}`).catch(err => {
             console.log(err)
         })
         setItemData(prev => {
@@ -118,17 +123,18 @@ export default function CrudItem({name, price, img, description, id, setItemData
 
         </textarea>
         <div className="flex ml-2">
-        {patchSent ? <div className="flex justify-center items-center">{loaderIcon}</div> : updateGlow ? <button className="text-xs" onClick={()=>{updateSingle()}}>
+        {patchSent ? <div className="flex justify-center items-center">{loaderIcon}</div> : updateGlow ? <button className="text-xs" onClick={(e)=>{updateSingle(e)}}>
              {uploadIcon}
             </button> :
-             <button className="text-xs" disabled  onClick={()=>{updateSingle()}}>
+             <button className="text-xs" disabled  onClick={(e)=>{updateSingle(e)}}>
              {uploadIcon}
             </button>}
 
 
-         {deleteSent ?  <div className="flex justify-center items-center ml-4">{loaderIcon}</div>  :<button className="text-xs ml-4" onClick={()=>{deleteRequest()}}>
+         {deleteSent ?  <div className="flex justify-center items-center ml-4">{loaderIcon}</div>  :<button className="text-xs ml-4" onClick={(e)=>{deleteRequest(e)}}>
               {deleteIcon}
             </button>}
         </div>
+        
     </div>
 }
