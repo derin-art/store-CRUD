@@ -34,7 +34,7 @@ export default function MainPage({user}){
 
     return ( user.status === 200 ?
      <>
-     <div className="h-2 bg-white fixed w-screen mb-4 pb-16" style={scrollPosition > 5.5 ? {"boxShadow": "1px 1px 30px #D3D3D3"}: {}}></div>
+     <div className="h-2 bg-gray-100 border fixed w-screen mb-4 pb-16" style={scrollPosition > 5.5 ? {"boxShadow": "1px 1px 30px #D3D3D3"}: {}}></div>
 
         <div className="flex items-center justify-center">  
             <div className="fixed mt-6 pt-4 pb-4">
@@ -70,8 +70,7 @@ export default function MainPage({user}){
      
      
      
-     
-      <img src={waveFooter} className="object-cover fixed -bottom-5 w-screen -z-50"></img>
+    
      </>
      :
     

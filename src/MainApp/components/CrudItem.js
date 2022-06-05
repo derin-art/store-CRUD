@@ -116,10 +116,10 @@ export default function CrudItem({name, price, img, description, id, setItemData
         <input type="text" defaultValue={name} /* value={item.name} */ onChange={(e)=>{updateName(e)}} className="text-gray-700 p-1 focus:bg-gray-200 bg-gray-100 outline-none text-center focus:outline border-y w-12 sm:w-24 text-xs border-green-400 overflow-hidden h-10">
         </input>
 
-        <input type="number" defaultValue={price}/*  value={item.price} */ onChange={(e)=>{updatePrice(e)}} className="text-gray-700 focus:bg-gray-200 bg-gray-100 text-center outline-none focus:outline border sm:w-24 border-r-gray-300 border-l-gray-300 border-green-400 text-xs w-12 overflow-hidden h-10">
+        <input type="number" defaultValue={price}/*  value={item.price} */ onChange={(e)=>{updatePrice(e)}} className="text-gray-700 focus:bg-gray-200 bg-gray-100 text-center outline-none focus:outline border sm:w-32 border-r-gray-300 border-l-gray-300 border-green-400 text-xs w-12 overflow-hidden h-10">
         </input>
 
-        <textarea defaultValue={description} /* value={item.description} */ onChange={(e)=>{updateDescription(e)}} className="text-gray-700 p-1 focus:bg-gray-200 outline-none bg-gray-100 focus:outline border-y sm:w-24 border-r text-center border-green-400 w-16 overflow-hidden text-xs h-10 rounded-r-lg">
+        <textarea defaultValue={description} /* value={item.description} */ onChange={(e)=>{updateDescription(e)}} className="text-gray-700 p-1 focus:bg-gray-200 outline-none bg-gray-100 focus:outline border-y sm:w-32 border-r text-center border-green-400 w-16 overflow-hidden text-xs h-10 rounded-r-lg">
 
         </textarea>
         <div className="flex ml-2">
