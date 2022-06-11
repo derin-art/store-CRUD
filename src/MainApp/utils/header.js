@@ -12,7 +12,7 @@ export default function Header(){
     
 
    
-   return (<div className="w-screen h-12 py-2 bg-white flex pt-6 pb-10 justify-center mt-6 bg-gray-100 p-8">
+   return (<div className="w-screen h-12 py-2 bg-white flex pt-6 pb-14 justify-center mt-10 bg-gray-100 p-8">
        
           <Link to="/">
             <button onClick={()=>{
