@@ -5,7 +5,6 @@ import AddItems from "./components/AddItems";
 import ItemCard from "./components/itemCard";
 import Header from "./utils/header";
 import CrudComponent from "./components/CrudComponent";
-import waveFooter from "../MainApp/components/wave.svg"
 
 export default function MainPage({user}){
     const [currentItem, setCurrentItem] = React.useState({result: "", itemName: "", itemPrice:""})

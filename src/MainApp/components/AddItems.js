@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import waveFooter from "./wave.svg"
+
 export default function AddItems({setCurrentItem, currentItem, setPreviewMode, user}){
     const [itemInput, setItemInput] = React.useState({})
     const [errorMessage, setErrorMessage] = React.useState()

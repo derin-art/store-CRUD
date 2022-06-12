@@ -1,7 +1,7 @@
 import React from "react";
 import CrudItem from "./CrudItem";
 import axios from "axios";
-import Wavefooter from "./wave.svg"
+
 
 export default function CrudComponent(){
     const [itemData, setItemData] = React.useState()
